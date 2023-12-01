@@ -5,9 +5,9 @@ ODIR=../build/obj
 CFLAGS=-I$(IDIR)
 LIBS=-lm
 
-_DEPS=tree.h
+_DEPS=tree.h node.h 
 DEPS=$(patsubst %,$(IDIR)/%,$(_DEPS))
-_OBJ=main.o tree.o
+_OBJ=main.o tree.o node.o 
 OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
