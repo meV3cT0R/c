@@ -1,7 +1,7 @@
 BIN=../bin
 PROGRAM=algorithms
 IDIR=include
-ODIR=obj
+ODIR=../build/obj
 CFLAGS=-I$(IDIR)
 LIBS=-lm
 
@@ -18,3 +18,4 @@ $(PROGRAM): $(OBJ)
 
 run:
 	$(BIN)/$(PROGRAM)
+	
