@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <tree.h>
-#include <node.h>
 #include <stdlib.h>
 #include <mergeStrings.h>
+#include <graph.h>
+#include <queue.h>
 
 void rearrange(struct TreeNode **root) {
     if(*root==NULL) return;
@@ -16,6 +17,28 @@ void rearrange(struct TreeNode **root) {
     rearrange(root);
 }
 int main() {
+    struct Graph graph;
+
+    initGraph(&graph);
+    insertEdge(&graph,1,2);
+    insertEdge(&graph,2,5);
+
+    printf("Breadth First search:");
+    bfs(&graph,1);
+
+
+    struct Queue queue;
+
+    enqueue(&queue,2);
+
+    printf("Queue:\n");
+    int i=0;
+    while(!isEmptyQ(&queue)){
+        int d = dequeue(&queue);
+        if(i++==0) enqueue(&queue,3);
+        printf("%d ",d);
+    }
+    printf("\n");
     // struct Node *head;
 
     // prepend(&head,5);
@@ -51,5 +74,8 @@ int main() {
     prepend(&head,2);
     append(&head,3);
     traverse(head.next);
+
+
+
     return 0;
 }

@@ -29,3 +29,15 @@ void append(struct Node *head,int val) {
     while(curr->next!=NULL) curr=curr->next;
     (*curr).next=temp;
 }
+
+int first(struct Node *head) {
+    if(isEmpty(head)) return -1;
+    struct Node *temp = head->next;
+    int val = temp->val;
+    head->next =head->next->next;
+    return val;
+}
+
+int isEmpty(struct Node*head) {
+    return head->next==NULL;
+}
