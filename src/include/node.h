@@ -3,5 +3,6 @@ struct Node {
     struct Node* next;
 };
 
-void traverse(struct Node* node);
-void prepend(struct Node **head,int val);
+void traverse(struct Node*);
+void prepend(struct Node*,int);
+void append(struct Node*,int );

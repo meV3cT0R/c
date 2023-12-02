@@ -11,16 +11,21 @@ void traverse(struct Node* node) {
     printf("\n");
 }
 
-void prepend(struct Node **head,int val) {
-    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
+void prepend(struct Node *head,int val) {
+    struct Node* temp = malloc(sizeof(struct Node));
     temp->val=val;
     temp->next=NULL;
-    if(temp!=NULL) {
-        if(head==NULL) {
-            *head = temp;
-        }else {
-            temp->next = *head;
-            *head=temp;
-        }
-    }
+    if(head!=NULL)
+        temp->next = head->next;       
+    (*head).next=temp;
+
+}
+
+void append(struct Node *head,int val) {
+    struct Node* temp =malloc(sizeof(struct Node));
+    temp->val=val;
+    temp->next=NULL;
+    struct Node* curr = head;
+    while(curr->next!=NULL) curr=curr->next;
+    (*curr).next=temp;
 }

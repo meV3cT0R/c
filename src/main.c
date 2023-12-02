@@ -2,7 +2,7 @@
 #include <tree.h>
 #include <node.h>
 #include <stdlib.h>
-
+#include <mergeStrings.h>
 
 void rearrange(struct TreeNode **root) {
     if(*root==NULL) return;
@@ -42,5 +42,14 @@ int main() {
         root= root->right;
     }
     printf("\n");
+
+    printf("%s\n",mergeAlternately("olleh","hello"));
+    
+    struct Node head;
+
+    prepend(&head,1);
+    prepend(&head,2);
+    append(&head,3);
+    traverse(head.next);
     return 0;
 }
