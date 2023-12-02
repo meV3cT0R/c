@@ -40,8 +40,9 @@ void initSearch(struct Graph *g) {
 
 void bfs(struct Graph *g,int start) {
     struct Queue queue;
+    dequeue(&queue);
     initSearch(g);
-    enqueue(&queue,1);
+    enqueue(&queue,start);
     g->discovered[start] = 1;
 
     while(!isEmptyQ(&queue)) {

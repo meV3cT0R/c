@@ -1,8 +1,7 @@
 #include <node.h>
 
 struct Queue {
-    int val;
-    struct Node *next;
+    struct Node q;
 };
 
 void enqueue(struct Queue*,int);

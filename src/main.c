@@ -22,6 +22,8 @@ int main() {
     initGraph(&graph);
     insertEdge(&graph,1,2);
     insertEdge(&graph,2,5);
+    insertEdge(&graph,2,9);
+    insertEdge(&graph,9,5);
 
     printf("Breadth First search:");
     bfs(&graph,1);
