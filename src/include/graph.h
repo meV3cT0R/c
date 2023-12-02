@@ -15,3 +15,4 @@ void insertEdge(struct Graph*,int,int);
 void printGraph(struct Graph*);
 void bfs(struct Graph*,int);
 void dfs(struct Graph*,int);
+

@@ -21,14 +21,22 @@ int main() {
 
     initGraph(&graph);
     insertEdge(&graph,1,2);
+    insertEdge(&graph,1,7);
+    insertEdge(&graph,1,8);
+    insertEdge(&graph,2,3);
     insertEdge(&graph,2,5);
-    insertEdge(&graph,2,9);
-    insertEdge(&graph,9,5);
+    insertEdge(&graph,2,5);
+    insertEdge(&graph,3,5);
+    insertEdge(&graph,3,4);
+    insertEdge(&graph,5,6);
+    insertEdge(&graph,5,4);
 
     printf("Breadth First search:");
     bfs(&graph,1);
 
-
+    printf("Depth First Search: ");
+    dfs(&graph,1);
+    printf("\n");
     struct Queue queue;
 
     enqueue(&queue,2);

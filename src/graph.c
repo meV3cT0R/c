@@ -8,7 +8,7 @@ void initGraph(struct Graph *g) {
         }
     }
     g->nvertices=0;
-    g->directed=1;
+    g->directed=0;
 }
 
 void insertEdge(struct Graph *g,int x,int y) {
@@ -60,3 +60,20 @@ void bfs(struct Graph *g,int start) {
     }
     printf("\n");
 }
+void dfs_helper(struct Graph*g,int start) {
+    g->discovered[start] = 1;
+    printf("%d ",start);
+    for(int i=0;i<MAX;i++) {
+        if(g->adjMatrix[start][i]==1) {
+            if((g->discovered[i])==0) {
+                g->parents[i] = start;
+                dfs_helper(g,i);
+            }
+        }
+    }
+}
+void dfs(struct Graph*g,int start) {
+    initSearch(g);
+    dfs_helper(g,start);
+}
+
