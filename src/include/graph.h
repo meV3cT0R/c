@@ -7,12 +7,14 @@ struct Graph {
     int parents[MAX];    
     int directed;
     int nvertices;
+    int weighted;
+    int distance[MAX];
 };
 
 void initGraph(struct Graph*);
 void initSearch(struct Graph*);
-void insertEdge(struct Graph*,int,int);
+void insertEdge(struct Graph*,int,int,int);
 void printGraph(struct Graph*);
 void bfs(struct Graph*,int);
 void dfs(struct Graph*,int);
-
+int primMST(struct Graph*,int);

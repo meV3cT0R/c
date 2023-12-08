@@ -2,6 +2,10 @@
     "files.associations": {
         "tree.h": "c",
         "stdio.h": "c",
-        "mergestrings.h": "c"
+        "mergestrings.h": "c",
+        "iterator": "c",
+        "limits.h": "c",
+        "graph.h": "c",
+        "removeduplicates.h": "c"
     }
 }
