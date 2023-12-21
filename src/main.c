@@ -7,6 +7,23 @@
 #include <stdbool.h>
 #include <string.h>
 #include <removeDuplicates.h>
+#include <fib.h>
+
+
+int main() {
+    int a = 40;
+    int* arr = malloc(sizeof(int)*(a+1));
+    for(int i=3;i<=a;i++) arr[i]=-1;
+    arr[1]=1;
+    arr[2]=1;
+    printf("[Memoization] fibonacci of %d : %d \n",a,fibMemo(a,arr));
+    printf("[Ultimate] fibonacci of %d : %d \n",a,fibUlt(a));
+    printf("[DP] fibonacci of %d : %d \n",a,fibDP(a));
+    printf("[DP optimized] fibonacci of %d : %d \n",a,fibDPOpt(a));
+    printf("[Normal] fibonacci of %d : %d \n",a,fib(a));
+}
+
+
 bool arrayStringsAreEqual(char** word1, int word1Size, char** word2, int word2Size) {
     int i=0,j=0,k=0,l=0;
 
@@ -100,99 +117,100 @@ void reorderList(struct ListNode* head) {
     fast->next=slow;
     
 }
-int main() {
+// int main() {
+//     int a = 8;
+//     printf("[Normal] fibonacci of %d : %d \n",a,fib(3));
+//     struct ListNode* head = lalloc(1);
+//     head->next = lalloc(2);
+//     insertVal(head,3);
+//     insertVal(head,4);
+//     insertVal(head,5);
+//     insertVal(head,6);
+//     insertVal(head,7);
 
-    struct ListNode* head = lalloc(1);
-    head->next = lalloc(2);
-    insertVal(head,3);
-    insertVal(head,4);
-    insertVal(head,5);
-    insertVal(head,6);
-    insertVal(head,7);
-
-    reorderList(head);
+//     reorderList(head);
 
 
-    while(head!=NULL){
-        printf("%d ",head->val);
-        head=head->next;
-    }
+//     while(head!=NULL){
+//         printf("%d ",head->val);
+//         head=head->next;
+//     }
     
-    // struct Graph graph;
+//     // struct Graph graph;
 
-    // initGraph(&graph);
-    // insertEdge(&graph,1,2,1);
-    // insertEdge(&graph,1,7,1);
-    // insertEdge(&graph,1,8,1);
-    // insertEdge(&graph,2,3,1);
-    // insertEdge(&graph,2,5,1);
-    // insertEdge(&graph,2,5,1);
-    // insertEdge(&graph,3,5,1);
-    // insertEdge(&graph,3,4,1);
-    // insertEdge(&graph,5,6,1);
-    // insertEdge(&graph,5,4,1);
+//     // initGraph(&graph);
+//     // insertEdge(&graph,1,2,1);
+//     // insertEdge(&graph,1,7,1);
+//     // insertEdge(&graph,1,8,1);
+//     // insertEdge(&graph,2,3,1);
+//     // insertEdge(&graph,2,5,1);
+//     // insertEdge(&graph,2,5,1);
+//     // insertEdge(&graph,3,5,1);
+//     // insertEdge(&graph,3,4,1);
+//     // insertEdge(&graph,5,6,1);
+//     // insertEdge(&graph,5,4,1);
 
-    // printf("Breadth First search:");
-    // bfs(&graph,1);
+//     // printf("Breadth First search:");
+//     // bfs(&graph,1);
 
-    // printf("Depth First Search: ");
-    // dfs(&graph,1);
-    // printf("\n");
+//     // printf("Depth First Search: ");
+//     // dfs(&graph,1);
+//     // printf("\n");
 
-    // // printf("Prim's mst weight:%d\n",);
-    // struct Queue queue;
+//     // // printf("Prim's mst weight:%d\n",);
+//     // struct Queue queue;
 
-    // enqueue(&queue,2);
+//     // enqueue(&queue,2);
 
-    // printf("Queue:\n");
-    // int i=0;
-    // while(!isEmptyQ(&queue)){
-    //     int d = dequeue(&queue);
-    //     if(i++==0) enqueue(&queue,3);
-    //     printf("%d ",d);
-    // }
-    // printf("\n");
-    // // struct Node *head;
+//     // printf("Queue:\n");
+//     // int i=0;
+//     // while(!isEmptyQ(&queue)){
+//     //     int d = dequeue(&queue);
+//     //     if(i++==0) enqueue(&queue,3);
+//     //     printf("%d ",d);
+//     // }
+//     // printf("\n");
+//     // // struct Node *head;
 
-    // // prepend(&head,5);
-    // // prepend(&head,3);
-    // // traverse(head);
+//     // // prepend(&head,5);
+//     // // prepend(&head,3);
+//     // // traverse(head);
 
 
-    // // struct TreeNode *root=NULL;
-    // // insert(&root,1);
-    // // insert(&root,2);
-    // // inOrderTraverse(root);
-    // // printf("\n");
+//     // // struct TreeNode *root=NULL;
+//     // // insert(&root,1);
+//     // // insert(&root,2);
+//     // // inOrderTraverse(root);
+//     // // printf("\n");
 
-    // struct TreeNode* root = malloc(sizeof(struct TreeNode*));
-    // root->val = 2;
-    // root->left = malloc(sizeof(struct TreeNode*));
-    // root->left->val =1;
-    // root->right = malloc(sizeof(struct TreeNode*));
-    // root->right->val =3;
-    // rearrange(&root);
+//     // struct TreeNode* root = malloc(sizeof(struct TreeNode*));
+//     // root->val = 2;
+//     // root->left = malloc(sizeof(struct TreeNode*));
+//     // root->left->val =1;
+//     // root->right = malloc(sizeof(struct TreeNode*));
+//     // root->right->val =3;
+//     // rearrange(&root);
 
-    // while(root!=NULL) {
-    //     printf("%d ",root->val);
-    //     root= root->right;
-    // }
-    // printf("\n");
+//     // while(root!=NULL) {
+//     //     printf("%d ",root->val);
+//     //     root= root->right;
+//     // }
+//     // printf("\n");
 
-    // printf("%s\n",mergeAlternately("olleh","hello"));
+//     // printf("%s\n",mergeAlternately("olleh","hello"));
     
-    // struct Node head;
+//     // struct Node head;
 
-    // prepend(&head,1);
-    // prepend(&head,2);
-    // append(&head,3);
-    // traverse(head.next);
+//     // prepend(&head,1);
+//     // prepend(&head,2);
+//     // append(&head,3);
+//     // traverse(head.next);
 
 
-    // char *word1[] = {"abc","d","defg"};
-    // char *word2[] = {"abcddef"};
+//     // char *word1[] = {"abc","d","defg"};
+//     // char *word2[] = {"abcddef"};
 
-    // printf("Array Strings are Equal:%d \n",arrayStringsAreEqual(word1,2,word2,2));
-printf("\n");
-    return 0;
-}
+//     // printf("Array Strings are Equal:%d \n",arrayStringsAreEqual(word1,2,word2,2));
+// printf("\n");
+//     return 0;
+// }
