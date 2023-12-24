@@ -4,9 +4,9 @@ IDIR=include
 ODIR=../build/obj
 CFLAGS=-I$(IDIR)
 
-_DEPS=tree.h node.h mergeStrings.h graph.h queue.h removeDuplicates.h
+_DEPS=tree.h node.h mergeStrings.h graph.h queue.h removeDuplicates.h gridTraveler.h
 DEPS=$(patsubst %,$(IDIR)/%,$(_DEPS))
-_OBJ=main.o tree.o node.o mergeStrings.o graph.o queue.o removeDuplicates.o dynamicProgramming/fib.o 
+_OBJ=main.o tree.o node.o mergeStrings.o graph.o queue.o removeDuplicates.o dynamicProgramming/fib.o dynamicProgramming/gridTraveler.o 
 OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)

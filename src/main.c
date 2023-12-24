@@ -7,20 +7,16 @@
 #include <stdbool.h>
 #include <string.h>
 #include <removeDuplicates.h>
-#include <fib.h>
 
+//dp
+#include <fib.h>
+#include <gridTraveler.h>
 
 int main() {
-    int a = 40;
-    int* arr = malloc(sizeof(int)*(a+1));
-    for(int i=3;i<=a;i++) arr[i]=-1;
-    arr[1]=1;
-    arr[2]=1;
-    printf("[Memoization] fibonacci of %d : %d \n",a,fibMemo(a,arr));
-    printf("[Ultimate] fibonacci of %d : %d \n",a,fibUlt(a));
-    printf("[DP] fibonacci of %d : %d \n",a,fibDP(a));
-    printf("[DP optimized] fibonacci of %d : %d \n",a,fibDPOpt(a));
-    printf("[Normal] fibonacci of %d : %d \n",a,fib(a));
+    int m=15,n=15;
+    printf("[DP] ways : %d\n",gridTravelerDP(m,n));
+    printf("[Memoization] ways : %d\n",gridTravelerMemo(m,n));
+    printf("[Normal] ways : %d\n",gridTraveler(m,n));
 }
 
 
