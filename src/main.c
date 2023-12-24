@@ -12,16 +12,22 @@
 #include <fib.h>
 #include <gridTraveler.h>
 #include <canSum.h>
+#include <howSum.h>
+
 int main() {
     int arr[] = {
         7,4
-    },as=2,ts=300;
-    
-    printf("[Normal] Can Sum : %d\n",canSum2(ts,arr,as));
-    printf("[Memoized] Can Sum : %d\n",canSumMemo(ts,arr,as));
+    },as=2,ts=300,s=0;;
+
+    int *ans = howSum(ts,arr,as,&s);
+
+    for(int i=0;i<s;i++) {
+        printf("%d ",ans[i]);
+    }
+    printf("\n");
 }
 
-
+//err
 bool arrayStringsAreEqual(char** word1, int word1Size, char** word2, int word2Size) {
     int i=0,j=0,k=0,l=0;
 

@@ -1,0 +1,1 @@
+int* howSum(int,int*,int,int*);
