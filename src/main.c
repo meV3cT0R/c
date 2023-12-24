@@ -11,12 +11,14 @@
 //dp
 #include <fib.h>
 #include <gridTraveler.h>
-
+#include <canSum.h>
 int main() {
-    int m=15,n=15;
-    printf("[DP] ways : %d\n",gridTravelerDP(m,n));
-    printf("[Memoization] ways : %d\n",gridTravelerMemo(m,n));
-    printf("[Normal] ways : %d\n",gridTraveler(m,n));
+    int arr[] = {
+        7,4
+    },as=2,ts=300;
+    
+    printf("[Normal] Can Sum : %d\n",canSum2(ts,arr,as));
+    printf("[Memoized] Can Sum : %d\n",canSumMemo(ts,arr,as));
 }
 
 
